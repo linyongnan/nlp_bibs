@@ -8,29 +8,25 @@ by Linyong Nan
 
 ## Question Answering
 
-![](images/QA_categories.png =100x100)
+![image](./images/QA_categories.png)
 
 We can naively categorize QA datasets/tasks with the criteria shown in the chart above, where we identify the core components of QA as question, context and answer. Different QA datasets have these components in different formats or with different features. Here we attempt to organize them and provide an incomprehensive list of papers as follows. We will include model papers later.
 
-**bAbI (2015)** [[paper](https://arxiv.org/abs/1502.05698)]
+**BAbI (2015)** [[paper](https://arxiv.org/abs/1502.05698)]
 
-a
+Weston et al. proposed a collection of proxy tasks (20 in total) to evaluate reading comprehension capability of a candidate model via question answering. The model is tested whether it is able to give short answers (yes/no, entity, etc) via chaining facts, simple induction, deduction and many more. The tasks are constructed with a simulation which behaves like a classic text adventure game, follows those of Bordes et al. (2010), and Weston et al. (2014)
 
 **SQuAD 1.0 (2016)** [[paper](https://arxiv.org/abs/1606.05250)]
 
-a2
+SQuAD 1.0 is a reading comprehension dataset where questions and answers are extracted from the context of Wikipedia articles (open-domain). Answer to each question is a segment of text (text span) from the corresponding reading passage (extractive). Exact match (EM) and Macro-averaged F1 score are used for evaluation.
 
 **SQuAD 2.0 (2018)** [[paper](https://arxiv.org/abs/1806.03822)]
 
-b
+Unanswerable questions are added to SQuAD 1.0 to test whether a candidate model can not only answer questions when possible, but also determine when no answer is supported by the paragraph. These questions are written adversarially by crowdworkers to look similar to answerable ones.
 
 **MS MARCO (2018)** [[paper](https://arxiv.org/abs/1611.09268)]
 
-c
-
-**SQA (2017)** [[paper](https://www.aclweb.org/anthology/P17-1167/)]
-
-c2
+Bajaj et al. released a large-scale (> 1M questions) reading comprehension QA dataset, where questions are sampled from Bing's search query logs and answers are either generated or rewritten by human. They proposed three tasks with the dataset: (1) determine if a question is answerable given the retrieved web documents/passages as context, and extract and synthesize the answer (extractive), (2) generate answer based on the context passages (abstractive), (3) rank a set of retrieved passages given a question. Both EM/F1 and BLEU/ROUGE are used for evaluation.
 
 **TriviaQA (2017)** [[paper](https://arxiv.org/abs/1705.03551)]
 
@@ -63,6 +59,10 @@ g2
 **WikiTQ (2015)** [[paper](https://arxiv.org/abs/1508.00305)]
 
 h
+
+**SequentialQA (2017)** [[paper](https://www.aclweb.org/anthology/P17-1167/)]
+
+For exploring a realistic, conversational QA setting, Iyyer et al. collected a new table QA dataset by decomposing complicated questions samples from WikiTQ dataset into multiple easier ones, therefore the model is tasked to answer sequences of simple but inter-related questions instead of a single long, complicated and unnatural question. A novel dynamic neural semantic parsing framework is proposed that train using a weakly supervised reward-guided search, this model leverages the sequential contexts to outperform SOTA QA models.
 
 **HybridQA (2020)** [[paper](https://arxiv.org/abs/2004.07347)]
 
